@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Video and Audio</title>
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+  <link href="css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <h1>HTML Video and Audio</h1>
+
+  <div class="wrapper">
+
+    <h2>Video 1</h2>
+    <div class="videoWrapper">
+      <video width="852" height="480" controls="controls" preload="none">
+        <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4" type="video/mp4">
+        <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.ogg" type="video/ogg">
+        <track label="English" kind="subtitles" srclang="en" src="bridge-captions.vtt" default>
+      </video>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/mediaelement-and-player.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement-plugins/2.5.0/skip-back/skip-back.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement-plugins/2.5.0/skip-back/skip-back-i18n.js"></script>
+  <script type="text/javascript">
+    $('video, audio').mediaelementplayer({
+      features: ['playpause', 'tracks', 'progress', 'skipback'],
+      useDefaultControls: true,
+      startLanguage: 'en',
+      skipBackInterval: 4
+    });
+  </script>
+
+  <link href="css/mediaelementplayer.css" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement-plugins/2.5.0/skip-back/skip-back.min.css" />
+  <link href="css/custom-player.css" rel="stylesheet">
+</body>
+
+</html>
